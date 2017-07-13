@@ -60,7 +60,8 @@ public void addScoreTeamB(View view){
         scoreTeamA = 0;
          faulTeamA = 0;
          outTeamA = 0;
-         freeThrowTeamA = 0;
+
+        freeThrowTeamA = 0;
          scoreTeamB = 0;
          faulTeamB = 0;
          outTeamB = 0;
