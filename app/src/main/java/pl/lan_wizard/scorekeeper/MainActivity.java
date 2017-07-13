@@ -6,14 +6,14 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private int scoreTeamA = 0;
-    private int faulTeamA = 0;
-    private int outTeamA = 0;
-    private int freeThrowTeamA = 0;
-    private int scoreTeamB = 0;
-    private int faulTeamB = 0;
-    private int outTeamB = 0;
-    private int freeThrowTeamB = 0;
+    int scoreTeamA = 0;
+    int faulTeamA = 0;
+    int outTeamA = 0;
+    int freeThrowTeamA = 0;
+    int scoreTeamB = 0;
+    int faulTeamB = 0;
+    int outTeamB = 0;
+    int freeThrowTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,31 +56,45 @@ public void addScoreTeamB(View view){
         freeThrowTeamB = freeThrowTeamB + 1;
         displayForTeamB(scoreTeamB,faulTeamB,outTeamB,freeThrowTeamB);
     }
+    public void reset(View view){
+        scoreTeamA = 0;
+         faulTeamA = 0;
+         outTeamA = 0;
+         freeThrowTeamA = 0;
+         scoreTeamB = 0;
+         faulTeamB = 0;
+         outTeamB = 0;
+         freeThrowTeamB = 0;
+        displayForTeamB(scoreTeamB,faulTeamB,outTeamB,freeThrowTeamB);
+        displayForTeamA(scoreTeamA,faulTeamA,outTeamA,freeThrowTeamA);
+        
+
+    }
     
     /**
      * Displays the given score for Team A.
      */
-    private void displayForTeamA(int score, int faul, int out, int free) {
+    public void displayForTeamA(int score, int faul, int out, int free) {
         TextView scoreView = (TextView) findViewById(R.id.scoreTeamA);
         scoreView.setText(String.valueOf(score));
         TextView faulView = (TextView) findViewById(R.id.faulsTeamA);
-        scoreView.setText(String.valueOf(faul));
+        faulView.setText(String.valueOf(faul));
         TextView ouitView = (TextView) findViewById(R.id.outsTeamA);
-        scoreView.setText(String.valueOf(out));
+        ouitView.setText(String.valueOf(out));
         TextView freeeView = (TextView) findViewById(R.id.freeThrowsTeamA);
-        scoreView.setText(String.valueOf(free));
+        freeeView.setText(String.valueOf(free));
     }
     /**
      * Displays the given score for Team B.
      */
-    private void displayForTeamB(int score, int faul, int out, int free) {
+    public void displayForTeamB(int score, int faul, int out, int free) {
         TextView scoreView = (TextView) findViewById(R.id.scoreTeamB);
         scoreView.setText(String.valueOf(score));
         TextView faulView = (TextView) findViewById(R.id.faulsTeamB);
-        scoreView.setText(String.valueOf(faul));
+        faulView.setText(String.valueOf(faul));
         TextView ouitView = (TextView) findViewById(R.id.outsTeamB);
-        scoreView.setText(String.valueOf(out));
+        ouitView.setText(String.valueOf(out));
         TextView freeeView = (TextView) findViewById(R.id.freeThrowsTeamB);
-        scoreView.setText(String.valueOf(free));
+        freeeView.setText(String.valueOf(free));
     }
 }
